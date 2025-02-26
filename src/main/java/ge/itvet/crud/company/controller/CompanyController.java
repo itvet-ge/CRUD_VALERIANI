@@ -1,7 +1,5 @@
 package ge.itvet.crud.company.controller;
 
-
-
 import ge.itvet.crud.company.model.Company;
 import ge.itvet.crud.company.service.CompanyService;
 

@@ -7,8 +7,8 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 @SpringBootApplication
 @ConfigurationPropertiesScan
-@EntityScan(basePackages = "ge.itvet.java49.domain")
-//@EnableJpaRepositories(basePackages = "ge.itvet.java49.repository")
+@EntityScan(basePackages = "ge.itvet.crud.company.domain")
+
 public class CrudApplication {
     public static void main(String[] args) {
         SpringApplication.run(CrudApplication.class, args);
