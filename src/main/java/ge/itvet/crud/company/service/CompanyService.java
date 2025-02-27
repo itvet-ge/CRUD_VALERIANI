@@ -1,22 +1,25 @@
 package ge.itvet.crud.company.service;
 
-import org.springframework.stereotype.Repository;
 import ge.itvet.crud.company.model.Company;
 import ge.itvet.crud.company.repository.CompanyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-
+@Service
 public class CompanyService {
 
+    private final CompanyRepository repository;
 
-
-    private CompanyRepository repository;
+    @Autowired
+    public CompanyService(CompanyRepository repository) {
+        this.repository = repository;
+    }
 
     public List<Company> findAll(int page, int size) {
-        return repository.findAll(page, size);
+        return repository.findAll();
     }
 
     public Optional<Company> findById(Long id) {
@@ -43,8 +46,3 @@ public class CompanyService {
         }
     }
 }
-
-
-
-
-

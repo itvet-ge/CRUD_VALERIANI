@@ -4,7 +4,7 @@ import ge.itvet.crud.company.model.Company;
 import ge.itvet.crud.company.service.CompanyService;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +17,11 @@ import java.util.Optional;
 @Schema(description = "კომპანიის მენეჯმენტი")
 public class CompanyController {
 
-    @Autowired
-    private CompanyService service;
+    private final CompanyService service;
+
+    public CompanyController(CompanyService service) {
+        this.service = service;
+    }
 
     @GetMapping("/{id}")
     @Schema(description = "კომპანიის წამოღება ID-ით")

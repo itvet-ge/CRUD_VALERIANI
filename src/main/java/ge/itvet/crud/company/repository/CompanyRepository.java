@@ -1,12 +1,15 @@
 package ge.itvet.crud.company.repository;
 
-
 import ge.itvet.crud.company.model.Company;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
 
-public interface CompanyRepository {
-    List<Company> findAll(int page, int size);
+@Repository
+public interface CompanyRepository extends JpaRepository<Company, Long> {
+    List<Company> findAll();
     Optional<Company> findById(Long id);
     Company save(Company company);
     void deleteById(Long id);

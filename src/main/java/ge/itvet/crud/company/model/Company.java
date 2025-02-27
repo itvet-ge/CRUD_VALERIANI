@@ -1,17 +1,18 @@
 package ge.itvet.crud.company.model;
 
-
-
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Data;
 
-import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 @Data
 @Schema(description = "კომპანიის მოდელი")
 public class Company {
-    @Schema(description = "კომპანიის უნიკალური იდენტიფიკატორი", example = "1")
+    @Schema(description = "კომპანიის უნიკალური იდენტიფიკატორი", example = "1", required = true)
     private Long id;
 
     @NotBlank(message = "ბიზნეს სფერო არ უნდა იყოს ცარიელი")
